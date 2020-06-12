@@ -111,9 +111,9 @@ export const generalHelpMenu = {
             name: "`.set-prefix`",
             value: "Change the prefix of the bot (only usable by members with 'manage server' permissions)"
         },
-        { 
-            name: "`.time`", 
-            value: "A comprehensive overview over all cooldowns" 
+        {
+            name: "`.time`",
+            value: "A comprehensive overview over all cooldowns"
         }
     ],
     timestamp: new Date(),
@@ -284,8 +284,9 @@ export const guideEmbed = {
         },
         {
             name: "**Population**",
-            value: "Your population works once every 12 hours, giving you 1 money per 10-20 people and consuming ~2 food per person in the process. " +
-                "You get population by buying upgrades."
+            value: "Your population works once every 12 hours, giving you between 8 and 15 money per citizen and consuming ~2 food per person in the process. " +
+                "You get population by buying upgrades. " +
+                "Additionally they reproduce naturally by up to 5% each day."
         },
         {
             name: "**Upgrades**",
@@ -360,10 +361,6 @@ export const marketHelp = {
                 "Another new feature are taxes: Once a week every player will be taxed based on their weekly income (you can check your income and tax classes classes with `.taxes`), this money will be given to the USB." +
                 "Basically every time you spend money on buying upgrades, betting, mine digging etc. will be given to the USB.\n" +
                 "You can check the USB balance with `.usb`.\n"
-        },
-        {
-            name: "*New:* Contracts",
-            value: ""
         }
     ],
     timestamp: new Date(),
@@ -373,14 +370,16 @@ export const marketHelp = {
 
 export const contractHelp = {
     title: "Contract help",
-    description: "This help menu is to help you with all your contract needs",
-
+    description: "This help menu is to help you with all your contract needs.\n" +
+        "Contracts can be made between to player to ensure a regular exchange of resources.",
     fields: [
         {
             name: "`.propose <user> <amount> <currency> <price> <price-currency> <time in days>`",
-            value: "This allows you to propose a contract to another user. \nAll contracts are limited to a maximum of 14 days." +
-            "\nHowever, the other user has to accept the contract\n" +
-            "For example: `.propose @Zero 100 steel 100 oil 14`"
+            value: "This allows you to propose a contract to another user. " +
+                "All contracts are limited to a maximum of 14 days." +
+                "However, the other user has to accept the contract.\n" +
+                "For example: `.propose @Zero 100 steel 100 oil 14`." +
+                "This would mean that Zero pays the proposer 100 steel in exchange for 100 oil every day for the next two weeks."
         },
         {
             name: "`.viewcontract <contract id>`",
@@ -389,9 +388,9 @@ export const contractHelp = {
         },
         {
             name: "`.accept <contractID> <yes | no>`",
-            value: "This command allows you to accept any contract if you put in the argument yes. \n" + 
-            "Otherwise, put in the argument of no if you don't want to accept it.\n" +
-            "For example: `.accept 10 yes`",
+            value: "This command allows you to accept any contract if you put in the argument yes. \n" +
+                "Otherwise, put in the argument of no if you don't want to accept it.\n" +
+                "For example: `.accept 10 yes`",
         },
     ],
     timestamp: new Date(),
@@ -406,12 +405,12 @@ export const clsHelp = {
     title: "Clientstate help",
     description: "Here you find everything related to the client-state system introduced in v2.2.\n" +
         "Client states are another source of passive income: Each state can have upgrades which boosts their productivity. Each state has its own loyalty factor: " +
-        "Loyalitly affects their productivity. They will receive resources once a day.\n" +
+        "Loyalitly affects their productivity (above 50% gives a bonus, below 50% a malus. On 0% they can declare independence.). They will receive resources once a day.\n" +
         "Client-states also have an own population which they need to feed, it will also grow passively, so investing in their farms is useful.",
     fields: [
         {
             name: "`.create-cls <name>`.",
-            value: "Create a new client-state with the given name. Each client-state boosts the amount of food one gets from his alliance.\n" + 
+            value: "Create a new client-state with the given name. Each client-state boosts the amount of food one gets from his alliance.\n" +
                 "By now the names can only be one word long."
         },
         {
